@@ -9,6 +9,8 @@ Source0:	https://fedorahosted.org/releases/s/y/system-config-audit/%{name}-%{ver
 # Source0-md5:	4e914c6e5945fccf4326993aabece70e
 URL:		https://fedorahosted.org/system-config-audit/
 BuildRequires:	audit-libs-devel
+BuildRequires:	gettext-devel
+BuildRequires:	intltool
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
