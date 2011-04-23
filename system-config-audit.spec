@@ -1,12 +1,12 @@
 Summary:	Utility for editing audit configuration
 Summary(pl.UTF-8):	Narzędzie do zmiany konfiguracji audytu
 Name:		system-config-audit
-Version:	0.4.17
+Version:	0.4.18
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://fedorahosted.org/releases/s/y/system-config-audit/%{name}-%{version}.tar.xz
-# Source0-md5:	4e914c6e5945fccf4326993aabece70e
+# Source0-md5:	cf729a164f8b3c1c807c2f195d88645c
 URL:		https://fedorahosted.org/system-config-audit/
 BuildRequires:	audit-libs-devel
 BuildRequires:	gettext-devel
