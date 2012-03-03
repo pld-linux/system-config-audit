@@ -8,6 +8,7 @@ Group:		Applications/System
 Source0:	https://fedorahosted.org/releases/s/y/system-config-audit/%{name}-%{version}.tar.xz
 # Source0-md5:	1fe70708385f6e3b4c3a84c9d0bb07ee
 URL:		https://fedorahosted.org/system-config-audit/
+Patch0:		auditd-restart.patch
 BuildRequires:	audit-libs-devel
 BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	intltool
@@ -32,6 +33,7 @@ Narzędzie do zmiany konfiguracji audytu.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %{__sed} -i -e 's,/main\.py,/main.pyc,' src/system-config-audit.in
 

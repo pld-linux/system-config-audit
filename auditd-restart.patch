@@ -1,0 +1,11 @@
+--- system-config-audit-0.4.20/src/server.c~	2012-02-06 19:41:42.000000000 +0200
++++ system-config-audit-0.4.20/src/server.c	2012-03-03 13:27:30.704519782 +0200
+@@ -344,7 +344,7 @@
+ 
+   assert (SOCKET_FILENO == STDIN_FILENO);
+   /* system() uses "sh -c ...", so the "exec " avoids one fork (). */
+-  res = system ("exec /sbin/service auditd condrestart "
++  res = system ("exec /sbin/service auditd try-restart "
+ 		STR(SOCKET_FILENO) "</dev/null");
+   if (res == -1)
+     err = errno;
