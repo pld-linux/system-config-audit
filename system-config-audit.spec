@@ -2,7 +2,7 @@ Summary:	Utility for editing audit configuration
 Summary(pl.UTF-8):	Narzędzie do zmiany konfiguracji audytu
 Name:		system-config-audit
 Version:	0.4.21
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://fedorahosted.org/releases/s/y/system-config-audit/%{name}-%{version}.tar.xz
@@ -19,6 +19,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	%{name} = %{version}-%{release}
 Requires:	audit >= 2.0
+Requires:	desktop-file-utils
 Requires:	python-audit
 Requires:	python-pygtk-glade >= 2:2.0
 Requires:	usermode
@@ -34,7 +35,6 @@ Narzędzie do zmiany konfiguracji audytu.
 %prep
 %setup -q
 %patch0 -p1
-
 %{__sed} -i -e 's,/main\.py,/main.pyc,' src/system-config-audit.in
 
 %build
@@ -42,7 +42,6 @@ Narzędzie do zmiany konfiguracji audytu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -52,6 +51,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+%update_desktop_database
+
+%postun
+%update_desktop_database
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
