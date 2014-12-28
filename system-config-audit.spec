@@ -10,7 +10,7 @@ Source0:	https://fedorahosted.org/releases/s/y/system-config-audit/%{name}-%{ver
 Patch0:		auditd-restart.patch
 URL:		https://fedorahosted.org/system-config-audit/
 BuildRequires:	audit-libs-devel
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	intltool
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	rpm-pythonprov
